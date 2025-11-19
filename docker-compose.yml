@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7
+    container_name: arquitectura_c4_redis
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ./backend
+    container_name: arquitectura_c4_backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - redis
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: arquitectura_c4_frontend
+    ports:
+      - "3000:80"   # mapea puerto 80 del contenedor (nginx) a 3000 local
+    depends_on:
+      - backend
+    restart: unless-stopped

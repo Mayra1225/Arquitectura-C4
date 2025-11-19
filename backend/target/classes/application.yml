@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: ${SPRING_REDIS_HOST:localhost}
+    port: ${SPRING_REDIS_PORT:6379}
+  cache:
+    type: redis
+    serializer: json
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.example: DEBUG
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+    instances:
+      antService:
+        baseConfig: default
+  retry:
+    instances:
+      antService:
+        maxAttempts: 3
+        waitDuration: 2s

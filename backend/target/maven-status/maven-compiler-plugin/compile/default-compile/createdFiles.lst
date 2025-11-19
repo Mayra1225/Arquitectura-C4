@@ -1,0 +1,9 @@
+org\example\controller\ConsultaController.class
+org\example\dto\ContribuyenteDTO.class
+org\example\service\VehiculoService.class
+org\example\ArquitecturaC4Application.class
+org\example\config\RedisConfig.class
+org\example\service\SRIService.class
+org\example\service\ANTService.class
+org\example\dto\VehiculoDTO.class
+org\example\config\CacheConfig.class
