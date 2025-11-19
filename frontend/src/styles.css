@@ -1,0 +1,81 @@
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #0f172a, #021022);
+  color: #e6eef8;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 24px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.form-row label {
+  width: 90px;
+  font-weight: 600;
+  color: #cfe7ff;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  color: #e6eef8;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #06b6d4;
+  color: #001219;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.card {
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.mono {
+  background: rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 6px;
+  overflow: auto;
+  max-height: 240px;
+  color: #dbeafe;
+}
